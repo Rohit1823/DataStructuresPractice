@@ -12,7 +12,7 @@ namespace DataStructures
             linkedlist.Add(30);
             linkedlist.Add(70);
             linkedlist.Display();
-            linkedlist.RemoveFirstNode();
+            linkedlist.RemoveLastNode();
             Console.ReadKey();
         }
     }
