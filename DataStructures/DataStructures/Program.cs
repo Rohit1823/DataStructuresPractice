@@ -7,14 +7,17 @@ namespace DataStructures
         //
         static void Main(string[] args)
         {
-            var linkedlist = new LinkedList();
+            LinkedList linkedlist = new LinkedList();
             linkedlist.Add(56);
-            linkedlist.Add(30);
             linkedlist.Add(70);
+            Console.WriteLine("The list before inserting 30 is : ");
+            linkedlist.Display();
+            linkedlist.InsertAtParticularPosition(3, 30);
+            Console.WriteLine("The list after inserting 30 is :  ");
             linkedlist.Display();
             linkedlist.RemoveLastNode();
-            
-            Console.ReadKey();
+            Console.WriteLine("The list after removing last node is : ");
+            linkedlist.Display();
         }
     }
 }

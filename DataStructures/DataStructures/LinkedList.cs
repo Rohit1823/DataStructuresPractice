@@ -23,7 +23,6 @@ namespace DataStructures
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} inserted into linked list", node.data);
         }
         internal void AddInReverseOrder(int data)
         {
@@ -40,50 +39,29 @@ namespace DataStructures
             }
             Console.WriteLine();
         }
-        internal void Display()
+
+        public void InsertAtParticularPosition(int position, int data)
         {
-            Node temp = this.head;
-            if (temp == null)
-            {
-                Console.WriteLine("Linked List is empty");
-                return;
-            }
-            while (temp != null)
-            {
-                Console.WriteLine(temp.data + " ");
-                temp = temp.next;
-            }
-        }
-        internal Node InsertAtParticularPosition(int position, int data)
-        {
+            Node node = new Node(data);
             if (position < 1)
-            {
                 Console.WriteLine("Invalid Position");
-            }
-            if (position == 1)
+            else if (position == 1)
             {
-                var newNode = new Node(data);
-                newNode.next = this.head;
-                head = newNode;
+                node.next = head;
+                head = node;
             }
             else
             {
-                while (position != 0)
+                Node temp = head;
+
+                while (position > 2)
                 {
-                    if (position == 1)
-                    {
-                        Node node = new Node(data);
-                        node.next = this.head.next;
-                        head.next = node;
-                        break;
-                    }
-                    head = head.next;
+                    temp = temp.next;
+                    position--;
                 }
-                if (position != 1)
-                    Console.WriteLine("Position out of range");
+                node.next = temp.next;
+                temp.next = node;
             }
-            Console.WriteLine("Inserted value is :" + head);
-            return head;
         }
         internal Node RemoveFirstNode()
         {
@@ -124,6 +102,20 @@ namespace DataStructures
                 this.head = this.head.next;
             }
             return null;
+        }
+        internal void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+            }
         }
     }
 }
