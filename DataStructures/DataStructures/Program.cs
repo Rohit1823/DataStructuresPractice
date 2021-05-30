@@ -13,6 +13,7 @@ namespace DataStructures
             linkedlist.Add(70);
             linkedlist.Display();
             linkedlist.RemoveLastNode();
+            
             Console.ReadKey();
         }
     }
